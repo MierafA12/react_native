@@ -6,7 +6,9 @@ const footer = () => {
   return (
     <View style={styles.footer}>
         <Icon style={styles.home} name = 'home'/>
+        <Icon style={styles.home} name = 'heart'/>
         <Icon style={styles.home} name = 'search'/>
+        <Icon style={styles.home} name = 'person'/>
     </View>
   )
 }

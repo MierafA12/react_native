@@ -1,43 +1,68 @@
 // App.jsx
 import React from 'react';
-import { Alert, Button, View, StyleSheet,Text ,Image, TouchableOpacity, ScrollView} from 'react-native';
-import Header from '../components/header';
+import { Alert, Button, View, StyleSheet,Text ,Image, TouchableOpacity, ScrollView, SafeAreaView} from 'react-native';
+import {Link} from 'expo-router';
 import Footer from '../components/footer';
 
+const App =()=>{
 
-const App = () => {
-  const handlePress = () => {
-    Alert.alert('Button Pressed!', 'You pressed the button.');
-  };
+
+
+
 
   return (
-    <ScrollView>
+        <ScrollView>
+      <SafeAreaView>
     <View style={styles.container}>
-        <Header/>
-        <Image style={styles.tmg1} source={require('../assets/images/i3.jpg')}/>
-        <View >
-        <TouchableOpacity style={styles.button} onPress={handlePress}>
-            <Text style={{color:'black',fontSize:20, fontWeight:'bold',justifyContent:'center',textAlign:'center'}}>Buy</Text>
+       
+        <Image style={styles.car} source={require('../assets/images/car1.png')}/>
+        <View style={styles.all}>
+        <Text style={styles.textone}> Rent Your Dream Car</Text>
+        <Link href="../components/Home" >
+        <TouchableOpacity style={styles.button} >
+            <Text style={{color:'black',fontSize:20, fontWeight:'bold',justifyContent:'center',textAlign:'center'}}>GetStarted </Text>
         </TouchableOpacity>
-          
+        </Link> 
       </View>
-    <Text style={styles.text1}>most popular</Text>
-      <View style={styles.images}>
-         <Image style={styles.tmg2} source={require('../assets/images/i3.jpg')}/>,
-         <Image style={styles.tmg2} source={require('../assets/images/doro.jpg')}/>,
-          <Image style={styles.tmg2} source={require('../assets/images/piza.jpg')}/>
-       </View>
            <Footer/>
      
     </View>
+    </SafeAreaView>
     </ScrollView>
-  );
+    );
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    margin:5,
+    //  backgroundColor: '#101820'
+  },
+  car:{
+    width: '100%',
+    height: 400,
+    marginBottom: 20,
+    borderRadius: 10,
+    resizeMode: 'cover',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  all:{
+    width: '100%',
+    height:400,
+    backgroundColor:'#101820',
+    borderTopLeftRadius: 30,
+    borderTopRightRadius: 30,
+    padding: 20,
+    flex: 1,
+    justifyContent:'space-around',
+    alignItems: 'center',
+    marginBottom: 20,
+  },
+  textone:{
+   color: 'white',
+   fontSize:50,
+   margin:10,
+   textweight:'bold',
   },
   button:{
     backgroundColor:'#ECAE36',
